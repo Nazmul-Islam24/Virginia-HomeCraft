@@ -19,7 +19,7 @@ export function Hero({ onOpenQuoteModal }: HeroProps) {
           referrerPolicy="no-referrer"
         />
         {/* Dark Rich Scrim Overlay for WCAG AA readability */}
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1C26] via-[#142B3A]/85 to-[#142B3A]/75" />
+        <div className="absolute inset-0 bg-gradient-to-t from-[#0D1C26] via-[#142B3A]/70 to-[#142B3A]/40" />
       </div>
 
       {/* Hero Foreground Content */}
