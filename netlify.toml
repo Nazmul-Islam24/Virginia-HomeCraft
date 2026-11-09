@@ -1,0 +1,32 @@
+# Netlify Configuration for Virginia HomeCraft
+[build]
+  publish = "dist"
+  command = "npm run build"
+
+# SPA Fallback: Redirect all page refreshes and direct URLs to index.html with HTTP 200
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+# Cache and mime headers for Open Graph & Social Share Preview images
+[[headers]]
+  for = "/og-image.jpg"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+    Content-Type = "image/jpeg"
+    Access-Control-Allow-Origin = "*"
+
+[[headers]]
+  for = "/og-image.png"
+  [headers.values]
+    Cache-Control = "public, max-age=604800, must-revalidate"
+    Content-Type = "image/png"
+    Access-Control-Allow-Origin = "*"
+
+# Security and general headers
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Content-Type-Options = "nosniff"
+    X-XSS-Protection = "1; mode=block"

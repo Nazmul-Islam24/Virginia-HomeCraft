@@ -1,0 +1,4 @@
+# Netlify Single-Page Application (SPA) redirect rule
+# Ensures direct navigation and page refresh on any route (/services, /about, /contact, /projects, etc.)
+# loads index.html with a 200 OK status instead of a 404 Not Found error.
+/*    /index.html   200

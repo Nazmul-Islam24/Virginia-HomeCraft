@@ -22,8 +22,20 @@ export function SEO({
     ? `${title} | ${siteConfig.business.name} Arlington VA`
     : siteConfig.seo.defaultTitle;
   const metaDescription = description || siteConfig.seo.defaultDescription;
-  const currentUrl = `${siteConfig.seo.siteUrl}${canonicalPath}`;
-  const socialImage = ogImage || `${siteConfig.seo.siteUrl}${siteConfig.seo.ogImage}`;
+  
+  // Resolve active base domain
+  const activeOrigin =
+    typeof window !== 'undefined' &&
+    window.location.origin &&
+    !window.location.origin.includes('localhost') &&
+    !window.location.origin.includes(':3000')
+      ? window.location.origin
+      : siteConfig.seo.siteUrl;
+
+  const currentUrl = `${activeOrigin}${canonicalPath}`;
+  const socialImage = ogImage
+    ? (ogImage.startsWith('http') ? ogImage : `${activeOrigin}${ogImage}`)
+    : `${activeOrigin}${siteConfig.seo.ogImage}`;
   const metaKeywords = keywords?.length
     ? keywords.join(', ')
     : siteConfig.seo.keywords.join(', ');
@@ -49,9 +61,15 @@ export function SEO({
     setMetaTag('property', 'og:description', metaDescription);
     setMetaTag('property', 'og:url', currentUrl);
     setMetaTag('property', 'og:image', socialImage);
+    setMetaTag('property', 'og:image:secure_url', socialImage);
+    setMetaTag('property', 'og:image:type', 'image/jpeg');
+    setMetaTag('property', 'og:image:width', '1200');
+    setMetaTag('property', 'og:image:height', '630');
+    setMetaTag('property', 'og:image:alt', fullTitle);
     setMetaTag('name', 'twitter:title', fullTitle);
     setMetaTag('name', 'twitter:description', metaDescription);
     setMetaTag('name', 'twitter:image', socialImage);
+    setMetaTag('name', 'twitter:image:alt', fullTitle);
 
     // 3. Update Canonical Link
     let canonical = document.querySelector('link[rel="canonical"]');

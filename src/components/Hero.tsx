@@ -8,7 +8,10 @@ interface HeroProps {
 
 export function Hero({ onOpenQuoteModal }: HeroProps) {
   return (
-    <section className="relative w-full text-white overflow-hidden min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] flex items-center justify-center border-b border-white/10">
+    <section
+      id="hero"
+      className="relative w-full text-white overflow-hidden min-h-[580px] sm:min-h-[640px] lg:min-h-[700px] flex items-center justify-center border-b border-white/10"
+    >
       {/* Background Image Layer across all devices */}
       <div className="absolute inset-0 z-0">
         <img
@@ -29,9 +32,16 @@ export function Hero({ onOpenQuoteModal }: HeroProps) {
           <span>{siteConfig.hero.badge}</span>
         </div>
 
-        {/* Headline */}
-        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold leading-[1.12] tracking-tight text-white max-w-4xl text-balance drop-shadow-sm">
-          Transform Your Home With Quality Remodeling and Renovation
+        {/* Headline with Awesome & Powerful Color Gradient */}
+        <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-heading font-extrabold leading-[1.15] tracking-tight text-white max-w-4xl text-balance drop-shadow-md">
+          <span className="text-white drop-shadow-sm">Transform Your Home With</span>{' '}
+          <span className="bg-gradient-to-r from-[#FBBF24] via-[#F97316] to-[#EA580C] bg-clip-text text-transparent inline-block drop-shadow-[0_2px_14px_rgba(249,115,22,0.4)]">
+            Quality Remodeling
+          </span>{' '}
+          <span className="text-amber-200/90">&amp;</span>{' '}
+          <span className="bg-gradient-to-r from-[#FDBA74] via-[#F97316] to-[#C2410C] bg-clip-text text-transparent inline-block drop-shadow-[0_2px_14px_rgba(234,88,12,0.4)]">
+            Renovation
+          </span>
         </h1>
 
         {/* Subtitle */}

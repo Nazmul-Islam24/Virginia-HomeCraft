@@ -47,6 +47,18 @@ export function Navbar({ currentPath, onNavigate, onOpenQuoteModal }: NavbarProp
     onNavigate(path);
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    setMobileMenuOpen(false);
+    onNavigate('/');
+    // Smooth scroll to top / hero section
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    const heroEl = document.getElementById('hero');
+    if (heroEl) {
+      heroEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   const handleQuoteClick = (e: React.MouseEvent) => {
     e.preventDefault();
     setMobileMenuOpen(false);
@@ -69,11 +81,18 @@ export function Navbar({ currentPath, onNavigate, onOpenQuoteModal }: NavbarProp
           {/* Logo & Name on Left (Mobile and Desktop) */}
           <a
             href="/"
-            onClick={(e) => handleLinkClick(e, '/')}
-            className="group flex items-center gap-2.5 sm:gap-3 text-left focus:outline-none shrink-0 min-w-0"
+            onClick={handleLogoClick}
+            className="group flex items-center gap-2.5 sm:gap-3 text-left focus:outline-none shrink-0 min-w-0 cursor-pointer"
             aria-label={`${siteConfig.business.name} Home`}
           >
-            <img src="/logo.webp" alt="Virginia HomeCraft – Paint, Remodel, Renovate" width="820" height="285" className="h-10 sm:h-12 w-auto" /></a>
+            <img
+              src="/logo.webp"
+              alt="Virginia HomeCraft – Paint, Remodel, Renovate"
+              width="820"
+              height="285"
+              className="h-10 sm:h-12 w-auto transition-transform duration-200 group-hover:scale-[1.02]"
+            />
+          </a>
 
           {/* Desktop Nav Links */}
           <nav className="hidden lg:flex items-center gap-7 text-sm font-medium text-[#142B3A]/80">
@@ -164,8 +183,21 @@ export function Navbar({ currentPath, onNavigate, onOpenQuoteModal }: NavbarProp
             <div>
               {/* Drawer Top Header: Logo, Virginia HomeCraft, and Close Button */}
               <div className="flex items-center justify-between pb-2.5 border-b border-white/10">
-                <div className="rounded-lg bg-white px-2 py-1"><img src="/logo.webp" alt="Virginia HomeCraft – Paint, Remodel, Renovate" width="820" height="285" className="h-9 w-auto" /></div>
-{/* Close Button */}
+                <a
+                  href="/"
+                  onClick={handleLogoClick}
+                  className="rounded-lg bg-white px-2 py-1 inline-block cursor-pointer active:scale-95 transition-transform"
+                  aria-label="Virginia HomeCraft Home"
+                >
+                  <img
+                    src="/logo.webp"
+                    alt="Virginia HomeCraft – Paint, Remodel, Renovate"
+                    width="820"
+                    height="285"
+                    className="h-9 w-auto"
+                  />
+                </a>
+                {/* Close Button */}
                 <button
                   onClick={() => setMobileMenuOpen(false)}
                   className="p-1 rounded-lg text-white/80 hover:text-white hover:bg-white/10 cursor-pointer"

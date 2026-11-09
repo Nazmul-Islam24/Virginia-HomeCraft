@@ -42,6 +42,13 @@ export default function App() {
     if (path !== currentPath) {
       window.history.pushState({}, '', path);
       setCurrentPath(path);
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+    } else {
+      window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+      const heroEl = document.getElementById('hero');
+      if (heroEl) {
+        heroEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      }
     }
   };
 

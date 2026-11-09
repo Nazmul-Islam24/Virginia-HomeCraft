@@ -24,6 +24,16 @@ export function Footer({ onNavigate }: FooterProps) {
     onNavigate(path);
   };
 
+  const handleLogoClick = (e: React.MouseEvent) => {
+    e.preventDefault();
+    onNavigate('/');
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+    const heroEl = document.getElementById('hero');
+    if (heroEl) {
+      heroEl.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  };
+
   return (
     <footer className="bg-[#0D1C26] text-white border-t border-white/10 pt-16 pb-24 lg:pb-16 text-left">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -31,7 +41,20 @@ export function Footer({ onNavigate }: FooterProps) {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-10 pb-12 border-b border-white/10">
           {/* Col 1 & 2: Brand & Social Links */}
           <div className="lg:col-span-2 space-y-4">
-            <div className="inline-block rounded-xl bg-white px-3 py-2"><img src="/logo.webp" alt="Virginia HomeCraft – Paint, Remodel, Renovate" width="820" height="285" className="h-12 w-auto" /></div>
+            <a
+              href="/"
+              onClick={handleLogoClick}
+              className="inline-block rounded-xl bg-white px-3 py-2 cursor-pointer transition-transform duration-200 hover:scale-[1.02]"
+              aria-label="Virginia HomeCraft Home"
+            >
+              <img
+                src="/logo.webp"
+                alt="Virginia HomeCraft – Paint, Remodel, Renovate"
+                width="820"
+                height="285"
+                className="h-12 w-auto"
+              />
+            </a>
 
             <p className="text-xs sm:text-sm text-white/70 leading-relaxed max-w-sm">
               {siteConfig.business.tagline}. Specializing in turnkey residential kitchen remodeling, bathroom sanctuaries, interior painting, and hardwood flooring in Arlington and Northern Virginia.
