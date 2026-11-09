@@ -35,9 +35,9 @@ export function Hero({ onOpenQuoteModal }: HeroProps) {
         </h1>
 
         {/* Subtitle */}
-        <p className="mt-5 text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl text-balance drop-shadow-xs">
+        {/* <p className="mt-5 text-base sm:text-lg md:text-xl text-white/90 leading-relaxed max-w-3xl text-balance drop-shadow-xs">
           From custom kitchen transformations and spa-inspired bathrooms to precision interior painting and wide-plank hardwood flooring. Built on local Arlington craftsmanship, transparent pricing, and clean, on-time delivery.
-        </p>
+        </p> */}
 
         {/* CTA Buttons */}
         <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto">

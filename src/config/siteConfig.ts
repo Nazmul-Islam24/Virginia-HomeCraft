@@ -110,8 +110,8 @@ export const siteConfig = {
   hero: {
     badge: 'Serving Arlington & Northern Virginia Since 2011',
     headline: 'Transform Your Home With Quality Remodeling & Improvement Services',
-    subheadline:
-      'From custom kitchen transformations and spa-inspired bathrooms to precision interior painting and wide-plank hardwood flooring. Built on local Arlington craftsmanship, transparent pricing, and clean, on-time delivery.',
+    // subheadline:
+    //   'From custom kitchen transformations and spa-inspired bathrooms to precision interior painting and wide-plank hardwood flooring. Built on local Arlington craftsmanship, transparent pricing, and clean, on-time delivery.',
     ctaPrimary: 'Get a Free Estimate',
     ctaSecondary: 'Call (703) 555-0198',
     image: '/images/hero_home_remodel_1794158450482.webp',
