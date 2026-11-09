@@ -72,7 +72,7 @@ export const siteConfig = {
     projectsCompleted: '1,200+',
     satisfactionRate: '99.4%',
     googleRating: '4.9',
-    reviewCount: '168',
+    reviewCount: 'All',
   },
 
   // 2. Contact Information & Hours
@@ -128,7 +128,7 @@ export const siteConfig = {
   trustStats: [
     { value: '15+', label: 'Years in Northern VA', detail: 'Established in Arlington' },
     { value: '1,200+', label: 'Renovations Completed', detail: 'Kitchens, Baths & Homes' },
-    { value: '4.9 / 5.0', label: 'Average Google Rating', detail: '168+ Verified Reviews' },
+    { value: '4.9 / 5.0', label: 'Average Google Rating', detail: 'All Verified Reviews' },
     { value: '100%', label: 'Turnkey Project Delivery', detail: 'Design, Permits & Build' },
   ],
 

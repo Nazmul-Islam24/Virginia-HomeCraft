@@ -88,7 +88,7 @@ export function Hero({ onOpenQuoteModal }: HeroProps) {
             <Star className="w-5 h-5 fill-amber-400 text-amber-400 shrink-0 mt-0.5" />
             <div>
               <div className="text-xs font-bold text-white uppercase tracking-wider">4.9★ Rating</div>
-              <p className="text-[11px] text-white/70">160+ Local Reviews</p>
+              <p className="text-[11px] text-white/70">All Local Reviews</p>
             </div>
           </div>
         </div>

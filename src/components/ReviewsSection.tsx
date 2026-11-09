@@ -130,7 +130,7 @@ export function ReviewsSection({}: ReviewsSectionProps) {
           rel="noopener noreferrer"
           className="inline-flex items-center gap-2 px-5 py-2.5 bg-white border border-neutral-300 hover:bg-neutral-50 text-neutral-800 text-xs font-semibold rounded-lg transition-colors shadow-xs"
         >
-          <span>Read All {siteConfig.business.reviewCount}+ Google Reviews</span>
+          <span>Read {siteConfig.business.reviewCount}+ Google Reviews</span>
           <ExternalLink className="w-3.5 h-3.5 text-neutral-500" />
         </a>
       </div>
